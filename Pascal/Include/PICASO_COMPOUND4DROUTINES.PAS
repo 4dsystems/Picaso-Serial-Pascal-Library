@@ -1,3 +1,54 @@
+// SPE Version 1.1 added bus_ and pin_ functions
+function bus_In() : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_bus_In) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+procedure bus_Out(Bits : word) ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_bus_Out) + inttostrx(Bits) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  GetAck() ;
+end ;
+
+function bus_Read() : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_bus_Read) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+procedure bus_Set(IOMap : word) ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_bus_Set) + inttostrx(IOMap) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  GetAck() ;
+end ;
+
+procedure bus_Write(Bits : word) ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_bus_Write) + inttostrx(Bits) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  GetAck() ;
+end ;
+
 function charheight(TestChar : AnsiChar) : word ;
 var
   towrite : AnsiString ;
@@ -964,6 +1015,46 @@ var
   written : dword ;
 begin
   towrite := inttostrx(F_mem_Heap) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+function pin_HI(Pin : word) : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_pin_HI) + inttostrx(Pin) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+function pin_LO(Pin : word) : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_pin_LO) + inttostrx(Pin) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+function pin_Read(Pin : word) : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_pin_Read) + inttostrx(Pin) ;
+  WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
+  Result := GetAckResp() ;
+end ;
+
+function pin_Set(Mode : word; Pin : word) : word ;
+var
+  towrite : AnsiString ;
+  written : dword ;
+begin
+  towrite := inttostrx(F_pin_Set) + inttostrx(Mode) + inttostrx(Pin) ;
   WriteFile(ComHandle4D,towrite[1],length(towrite),written, nil) ;
   Result := GetAckResp() ;
 end ;

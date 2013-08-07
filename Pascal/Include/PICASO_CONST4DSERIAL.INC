@@ -1,3 +1,9 @@
+// SPE Version 1.1 added bus_ and pin_ functions
+ F_bus_In = -45;
+ F_bus_Out = -46;
+ F_bus_Read = -49;
+ F_bus_Set = -47;
+ F_bus_Write = -48;
  F_charheight = 29;
  F_charwidth = 30;
  F_file_Close = -232;
@@ -96,6 +102,10 @@
  F_media_WrSector = 23;
  F_mem_Free = -220;
  F_mem_Heap = -221;
+ F_pin_HI = -42;
+ F_pin_LO = -43;
+ F_pin_Read = -44;
+ F_pin_Set = -41;
  F_putCH = -2;
  F_putstr = 24;
  F_snd_BufSize = -258;

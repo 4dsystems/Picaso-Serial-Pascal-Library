@@ -40,7 +40,7 @@
 			<DelphiCompile Include="clock.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="clock1.pas">
+			<DCCReference Include="CLOCK1.PAS">
 				<Form>Form1</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Base">
