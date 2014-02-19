@@ -334,7 +334,7 @@ begin ;
   writeln('Display off') ;
   gfx_Contrast(0) ;
   sleep(1000) ;
-  gfx_Contrast(1) ;
+  gfx_Contrast(15) ;
   writeln('Display on') ;
   gfx_Ellipse(100,230, 50,30,RED) ;
   gfx_EllipseFilled(100,300, 50,30,AQUA) ;
