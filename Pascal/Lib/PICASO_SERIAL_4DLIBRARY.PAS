@@ -1,4 +1,5 @@
 unit Picaso_Serial_4DLibrary;
+// SPE Version 1.2 added peekM and pokeM functions
 // SPE Version 1.1 added bus_ and pin_ functions
 interface
 uses windows ;
@@ -90,9 +91,11 @@ function media_WrSector(SectorOut : t4DSector) : word ;
 function mem_Free(Handle : word) : word ;
 function mem_Heap() : word ;
 function pin_HI(Pin : word) : word ;
+function peekM(Address : word) : word ;
 function pin_LO(Pin : word) : word ;
 function pin_Read(Pin : word) : word ;
 function pin_Set(Mode : word; Pin : word) : word ;
+procedure pokeM(Address : word; WordValue : word) ;
 procedure putCH(WordChar : word) ;
 function putstr(InString : AnsiString) : word ;
 function readString(Handle : word; var StringIn : ansistring) : word ;

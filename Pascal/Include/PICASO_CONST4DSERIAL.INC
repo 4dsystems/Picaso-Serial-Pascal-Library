@@ -1,3 +1,4 @@
+// SPE Version 1.2 added peekM and pokeM functions
 // SPE Version 1.1 added bus_ and pin_ functions
  F_bus_In = -45;
  F_bus_Out = -46;
@@ -102,10 +103,12 @@
  F_media_WrSector = 23;
  F_mem_Free = -220;
  F_mem_Heap = -221;
+ F_peekM = 39;
  F_pin_HI = -42;
  F_pin_LO = -43;
  F_pin_Read = -44;
  F_pin_Set = -41;
+ F_pokeM = 40;
  F_putCH = -2;
  F_putstr = 24;
  F_snd_BufSize = -258;
